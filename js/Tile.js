@@ -4,21 +4,15 @@ export default class Tile{
     #y
     #value
 
-    constructor($board,value = Math.random() > .5 ? 2 : 4){
+    constructor($board, value = Math.random() > 0.5 ? 2 : 4){
         this.$board = $board;
-        this.#$tile = this.add_tile_elem();
+        this.#$tile = this.addTileElement();
         this.value = value;
     }//constructor
 
-    /* [METHOD] */
-    add_tile_elem(){
-        const $tile = document.createElement('DIV');
-        $tile.classList.add('tile');
-        this.$board.appendChild($tile);
-        return $tile;
-    }//add_tile_elem
-
     /* [GETTER & SETTER] */
+    get value(){return this.#value;}
+
     set value(v){
         this.#value = v;
         this.#$tile.textContent = v;
@@ -43,4 +37,20 @@ export default class Tile{
         this.#$tile.style.setProperty("--y",value);
     }//set-y
 
+    /* [METHOD] */
+    addTileElement(){
+        const $tile = document.createElement('DIV');
+        $tile.classList.add('tile');
+        this.$board.appendChild($tile);
+        return $tile;
+    }//addTileElement
+
+    remove(){ this.#$tile.remove(); }//remove
+
+    waitForTransition(animation = false){
+        return new Promise(resolve =>{
+            const eventName = animation ? "animationend" : 'transitionend';
+            this.#$tile.addEventListener(eventName ,resolve, {once:true});
+        });
+    }//waitForTransition
 }//class-Tile

@@ -40,6 +40,7 @@
     color:hsl(200,25%,var(--cell-text-lightness));
     animation:show 200ms ease-in-out;
     transition:100ms ease-in-out;
+    box-shadow:2px 2px 0 rgba(0,0,0,.2);
 }
 
 @keyframes show {

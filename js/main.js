@@ -1,16 +1,12 @@
-import { setupInput } from "./event.js";
+import { setupInput, setup_event } from "./event.js";
 import Grid from "./grid.js";
 import Tile from "./Tile.js";
 
-const $gameBoard = document.getElementById('game-board');
-const GRID = new Grid($gameBoard);
+const $board = document.getElementById('game-board');
 
-// console.log(GRID.randomEmptyCell()); //테스트
-GRID.randomEmptyCell().tile = new Tile($gameBoard);
-GRID.randomEmptyCell().tile = new Tile($gameBoard);
+const GRID = new Grid($board);
+GRID.randomEmptyCell().tile = new Tile($board);
+GRID.randomEmptyCell().tile = new Tile($board);
 
-
-/* --- window event 관련 ---- */
+setup_event($board,GRID);
 setupInput();
-
-//31:40
