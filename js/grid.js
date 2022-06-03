@@ -70,5 +70,13 @@ class Cell{
         this.#y = Y;
     }//constructor
 
+    /* [GETTER & SETTER] */
     get tile(){return this.#tile;}
+
+    set tile(value){
+        this.#tile = value;
+        if(value == null){return;}
+        this.#tile.x = this.#x;
+        this.#tile.y = this.#y;
+    }//set-tile
 }//class-Cell

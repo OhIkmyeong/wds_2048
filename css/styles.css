@@ -21,9 +21,9 @@
 }
 
 .tile{
-    --x:0; --y:0;
-    --cell-bg-lightness:20%;
-    --cell-text-lightness:80%;
+    /* --x:0; --y:0; */
+    /* --cell-bg-lightness:20%; */
+    /* --cell-text-lightness:80%; */
     position:absolute;
     width:var(--cell-size); aspect-ratio:1/1;
     border-radius:var(--bdr);
