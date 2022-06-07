@@ -121,7 +121,10 @@ export default class Play{
         );//return-Promise
     }//slideTiles
 
-    moveUp(){return this.slideTiles(this.GRID.cellsByColumn);}
+    moveUp(){
+        const result = this.GRID.cellsByColumn;
+        // console.log(result.flatMap(x=>x));
+        return this.slideTiles(result);}
     moveDown(){
         return this.slideTiles(this.GRID.cellsByColumn.map(col=>[...col].reverse()));}
     moveLeft(){
