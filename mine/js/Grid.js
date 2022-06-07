@@ -62,7 +62,6 @@ export default class Grid{
     /* 💥02. 키보드 이벤트 핸들러 관련 */
     get cellsByColumn(){
         return this.#CELLS.reduce((cellGrid,cell)=>{
-            console.log(cellGrid,cell);
             cellGrid[cell.x] = cellGrid[cell.x] || [];
             cellGrid[cell.x][cell.y] = cell;
             return cellGrid;
