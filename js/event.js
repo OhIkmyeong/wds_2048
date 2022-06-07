@@ -38,7 +38,8 @@ async function handleInput(e){
             await moveRight()
             break;
         default:
-            break;
+            setupInput();
+            return;
     }//switch
     
     //other codes
@@ -55,6 +56,8 @@ async function handleInput(e){
     setupInput();
 }//handleInput
 
+
+/* [움직이기] */
 function moveUp(){
     return slideTiles(GRID.cellsByColumn);
 }//moveUp
